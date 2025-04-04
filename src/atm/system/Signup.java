@@ -199,6 +199,46 @@ public class Signup extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
+        String formno = first;
+        String name = textName.getText();
+        String fname = textFname.getText();
+        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
+        String gender = null;
+        if(r1.isSelected()){
+            gender = "Male";
+        }else if (r2.isSelected()){
+            gender = "Female";
+        }
+        String email = textEmail.getText();
+        String marital =null;
+        if (m1.isSelected()){
+            marital = "Married";
+        } else if (m2.isSelected()) {
+            marital = "Unmarried";
+        } else if (m3.isSelected()) {
+            marital = "Other";
+        }
+
+        String address = textAdd.getText();
+        String city = textcity.getText();
+        String pincode = textPin.getText();
+        String state = textState.getText();
+
+        try{
+            if (textName.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Fill all the fields");
+            }else {
+                Con c = new Con();
+                String q = "insert into signup values('"+formno+"', '"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"', '"+address+"', '"+city+"','"+pincode+"','"+state+"' )";
+                c.statement.executeUpdate(q);
+                new Signup2(formno);
+                setVisible(false);
+            }
+
+        }catch (Exception E){
+            E.printStackTrace();
+        }
+
 
     }
 
