@@ -21,7 +21,7 @@ public class Deposit extends JFrame implements ActionListener {
         l3.setBounds(0,0,1550,830);
         add(l3);
 
-        JLabel label1 = new JLabel("ENETR AMOUNT YOU WANT TO DEPOSIT");
+        JLabel label1 = new JLabel("ENTER AMOUNT YOU WANT TO DEPOSIT");
         label1.setForeground(Color.WHITE);
         label1.setFont(new Font("System", Font.BOLD, 16));
         label1.setBounds(460,180,400,35);
@@ -31,7 +31,7 @@ public class Deposit extends JFrame implements ActionListener {
         textField.setBackground(new Color(65,125,128));
         textField.setForeground(Color.WHITE);
         textField.setBounds(460,230,320,25);
-        textField.setFont(new Font("Raleway", Font.BOLD,22));
+        textField.setFont(new Font("Arial", Font.BOLD,22));
         l3.add(textField);
 
         b1 = new JButton("DEPOSIT");
@@ -64,7 +64,7 @@ public class Deposit extends JFrame implements ActionListener {
             String amount = textField.getText();
             Date date = new Date();
             if (e.getSource()==b1){
-                if (textField.getText().equals("")){
+                if (textField.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null,"Please enter the Amount you want to Deposit");
                 }else {
                     Con c = new Con();
