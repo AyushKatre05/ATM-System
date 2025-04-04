@@ -13,7 +13,7 @@ public class Login extends JFrame implements ActionListener {
 
     JButton button1,button2,button3;
     Login(){
-        super("Bank Management System");
+        super("ATM System");
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icon/bank.png"));
         Image i2 = i1.getImage().getScaledInstance(100,100,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
@@ -35,7 +35,7 @@ public class Login extends JFrame implements ActionListener {
         add(label1);
 
         label2 = new JLabel("Card No:");
-        label2.setFont(new Font("Ralway", Font.BOLD, 28));
+        label2.setFont(new Font("Arial", Font.BOLD, 28));
         label2.setForeground(Color.WHITE);
         label2.setBounds(150,190,375,30);
         add(label2);
@@ -46,7 +46,7 @@ public class Login extends JFrame implements ActionListener {
         add(textField2);
 
         label3 = new JLabel("PIN: ");
-        label3.setFont(new Font("Ralway", Font.BOLD, 28));
+        label3.setFont(new Font("Arial", Font.BOLD, 28));
         label3.setForeground(Color.WHITE);
         label3.setBounds(150,250,375,30);
         add(label3);
@@ -106,7 +106,7 @@ public class Login extends JFrame implements ActionListener {
                 ResultSet resultSet = c.statement.executeQuery(q);
                 if (resultSet.next()){
                     setVisible(false);
-//                    new main_Class(pin);
+                    new main_Class(pin);
                 }else {
                     JOptionPane.showMessageDialog(null,"Incorrect Card Number or PIN");
                 }
