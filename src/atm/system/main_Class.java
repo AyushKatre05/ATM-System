@@ -88,13 +88,13 @@ public class main_Class extends JFrame implements ActionListener {
         }else if (e.getSource()==b7){
             System.exit(0);
         } else if (e.getSource()==b2) {
-//            new Withdrawl(pin);
+            new Withdrawl(pin);
             setVisible(false);
         } else if (e.getSource()==b6) {
-//            new BalanceEnquriy(pin);
+            new BalanceEnquiry(pin);
             setVisible(false);
         } else if (e.getSource()==b3) {
-//            new FastCash(pin);
+            new FastCash(pin);
             setVisible(false);
         } else if (e.getSource()==b5) {
 //            new Pin(pin);
